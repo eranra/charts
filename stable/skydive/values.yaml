@@ -1,37 +1,30 @@
-# Default values for skydive.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-replicaCount: 1
+###############################################################################
+# Licensed Materials - Property of IBM.
+# Copyright IBM Corporation 2017. All Rights Reserved.
+# U.S. Government Users Restricted Rights - Use, duplication or disclosure 
+# restricted by GSA ADP Schedule Contract with IBM Corp.
+#
+# Contributors:
+#  IBM Corporation - initial API and implementation
+###############################################################################
 image:
-  repository: nginx
-  tag: stable
-  pullPolicy: IfNotPresent
+  repository: skydive/skydive
+  tag: 1
+
+## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+resources:
+  storage:
+    size: 2Gi
+    class: 
+  limits:
+    cpu: 100m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 512Mi
+
 service:
-  name: nginx
-  type: ClusterIP
-  externalPort: 80
-  internalPort: 80
-ingress:
-  enabled: false
-  # Used to create an Ingress record.
-  hosts:
-    - chart-example.local
-  annotations:
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  tls:
-    # Secrets must be manually created in the namespace.
-    # - secretName: chart-example-tls
-    #   hosts:
-    #     - chart-example.local
-resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #  cpu: 100m
-  #  memory: 128Mi
-  # requests:
-  #  cpu: 100m
-  #  memory: 128Mi
+  name: skydive
+  type: NodePort
+  port: 8082
+  

@@ -4,16 +4,18 @@ metadata:
   name: {{ template "fullname" . }}
   labels:
     app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.externalPort }}
-      targetPort: {{ .Values.service.internalPort }}
-      protocol: TCP
-      name: {{ .Values.service.name }}
+  - port: {{ .Values.service.port }}
+    name: api
+  - port: {{ .Values.service.port }}
+    name: protobuf
+    protocol: UDP
+  - port: 12379
+    name: etcd
+  - port: 9200
+    name: es
   selector:
     app: {{ template "name" . }}
-    release: {{ .Release.Name }}
+    tier: analyzer
