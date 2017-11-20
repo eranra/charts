@@ -7,7 +7,7 @@ spec:
   template:
     metadata:
       labels:
-        app: skydive
+        app: {{ template "name" . }}
         tier: analyzer
     spec:
       containers:
@@ -17,8 +17,8 @@ spec:
         - analyzer
         - --listen=0.0.0.0:8082
         ports:
-        - containerPort: 8082
-        - containerPort: 8082
+        - containerPort: {{ .Values.service.port }}
+        - containerPort: {{ .Values.service.port }}
           protocol: UDP
         - containerPort: 12379
         env:

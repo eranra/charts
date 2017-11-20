@@ -6,7 +6,7 @@ spec:
   template:
     metadata:
       labels:
-        app: skydive
+        app: {{ template "name" . }}
         tier: agent
     spec:
       hostNetwork: true
@@ -20,7 +20,7 @@ spec:
         - containerPort: 8081
         env:
         - name: SKYDIVE_ANALYZERS
-          value: "$(SKYDIVE_ANALYZER_SERVICE_HOST):$(SKYDIVE_ANALYZER_SERVICE_PORT_API)"
+          value: 127.0.0.1:{{ .Values.service.port }}
         securityContext:
           privileged: true
         volumeMounts:
