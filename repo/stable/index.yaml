@@ -1,20 +1,20 @@
 apiVersion: v1
 entries:
-  skydive-dev:
+  skydive:
   - apiVersion: v1
-    created: 2017-10-24T18:37:36.607790539Z
+    created: 2017-11-20T14:00:00.000000000Z
     description: Real-time network topology and protocols analyzer
-    digest: 2a8f11e4163c4c496280fc5441facf85648e0bcbee200345b7b8cae78d294ec2
-    home: https://www.ibm.com/analytics/us/en/technology/cloud-data-services/cloudant/
-    icon: https://pbs.twimg.com/profile_images/618444507042988041/r72YruBL.png
+    home: https://skydive-project.github.io/skydive/
+    icon: https://avatars2.githubusercontent.com/u/19912486?s=400&v=4
     keywords:
-    - skydive
+    - Skydive
     - IBM
+    - Research
     maintainers:
     - email: eranra@il.ibm.com
-      name: hemanthavs
-    name: skydive-dev
+      name: eranra
+    name: skydive
     tillerVersion: '>=2.4.0'
     urls:
-    - https://raw.githubusercontent.com/IBM/charts/master/repo/stable/ibm-cloudant-dev-1.0.0.tgz
+    - https://raw.githubusercontent.com/eranra/charts/master/repo/stable/skydive-1.0.0.tgz
     version: 1.0.0
