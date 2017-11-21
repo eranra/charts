@@ -20,7 +20,7 @@ spec:
         - containerPort: 8081
         env:
         - name: SKYDIVE_ANALYZERS
-          value: "192.168.16.100:8082"
+          value: "10.0.0.143:8082"
         securityContext:
           privileged: true
         volumeMounts:
