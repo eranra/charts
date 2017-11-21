@@ -20,7 +20,7 @@ spec:
         - containerPort: 8081
         env:
         - name: SKYDIVE_ANALYZERS
-          value: "{{ template "fullname" . }}:{{ .Values.service.port }}"
+          value: {{ lotemplate "fullname" . }}
         securityContext:
           privileged: true
         volumeMounts:
