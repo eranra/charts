@@ -28,6 +28,8 @@ spec:
           value: elasticsearch
         - name: SKYDIVE_ETCD_LISTEN
           value: 0.0.0.0:12379
+        - name: SKYDIVE_FLOW_PROTOCOL
+          value: websocket
       - name: skydive-elasticsearch
         image: elasticsearch:2
         ports:

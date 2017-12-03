@@ -9,6 +9,7 @@ spec:
         app: {{ template "name" . }}
         tier: agent
     spec:
+      dnsPolicy: ClusterFirstWithHostNet
       hostNetwork: true
       hostPID: true
       containers:
@@ -21,6 +22,8 @@ spec:
         env:
         - name: SKYDIVE_ANALYZERS
           value: "{{ template "fullname" . }}:{{ .Values.service.port }}"
+        - name: SKYDIVE_FLOW_PROTOCOL
+          value: websocket
         securityContext:
           privileged: true
         volumeMounts:
