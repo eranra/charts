@@ -30,6 +30,8 @@ spec:
           value: 0.0.0.0:12379
         - name: SKYDIVE_FLOW_PROTOCOL
           value: websocket
+        - name: SKYDIVE_ANALYZER_TOPOLOGY_FABRIC
+          value: TOR1->*[Type=host]/eth0
       - name: skydive-elasticsearch
         image: elasticsearch:2
         ports:
