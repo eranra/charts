@@ -19,6 +19,6 @@ entries:
     sources:
     - https://github.com/skydive-project/skydive/tree/master/contrib
     urls:
-    - https://raw.githubusercontent.com/IBM/charts/master/repo/incubating/skydive-1.0.0.tgz
+    - https://raw.githubusercontent.com/eranra/charts/master/repo/incubating/skydive-1.0.0.tgz
     version: 1.0.0
 generated: 2017-12-04T18:27:41.836322159+02:00
