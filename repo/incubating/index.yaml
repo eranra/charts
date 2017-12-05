@@ -1,0 +1,24 @@
+apiVersion: v1
+entries:
+  skydive:
+  - apiVersion: v1
+    created: 2017-12-04T18:27:41.837794653+02:00
+    description: Skydive is an open source real-time network topology and protocols
+      analyzer. It aims to provide a comprehensive way of understanding what is happening
+      in the network infrastructure.
+    digest: 872d9271d87d3a6cebd67b1d336c6e22def959439736028aef0e45f9243a00cd
+    home: https://skydive-project.github.io/skydive/
+    icon: https://avatars2.githubusercontent.com/u/19912486?s=400&v=4
+    keywords:
+    - Skydive
+    - Research
+    maintainers:
+    - email: eranra@il.ibm.ocm
+      name: IBM Reserach (HRL)
+    name: skydive
+    sources:
+    - https://github.com/skydive-project/skydive/tree/master/contrib
+    urls:
+    - https://raw.githubusercontent.com/IBM/charts/master/repo/incubating/skydive-1.0.0.tgz
+    version: 1.0.0
+generated: 2017-12-04T18:27:41.836322159+02:00
